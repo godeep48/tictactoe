@@ -496,4 +496,39 @@ elif users_value.lower() == "no":
         x = [computer,player,computer,player,computer,player,computer,player,computer]
         computer_first()
 
+def again_play():
+    import random
+    from IPython.display import clear_output
+    player = "X"
+    computer = "O"
+    num = [" "]*9
+    import random
+    new_list = [0,2,6,8]
+    if users_value.lower() == "yes":
+        user_toss = input("Enter 1 or 2")
+        toss_list = [1,2]
+        toss = random.choice(toss_list)
+        if toss != user_toss:
+            print("You lose the toss. Computer will make the first turn")
+            x = [computer,player,computer,player,computer,player,computer,player,computer]
+            computer_first()
+        elif toss == user_toss:
+            print("You won the toss. Make your first turn")
+            x = [player,computer,player,computer,player,computer,player,computer,player]
+            player_first()
+    elif users_value.lower() == "no":
+        user_opinion = input("Do you want to play first. Yes/No")
+        if user_opinion.lower()=="yes":
+            x = [player,computer,player,computer,player,computer,player,computer,player]
+            player_first()
+        elif user_opinion.lower()=="no":
+            print("Computer will make the first turn")
+            x = [computer,player,computer,player,computer,player,computer,player,computer]
+            computer_first()
+
+    ask.ask_again()
 ask.ask_again()
+if ask.play_again.lower()=="yes":
+    again_play()
+else:
+    pass
