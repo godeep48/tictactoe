@@ -2,8 +2,6 @@ import random
 from IPython.display import clear_output
 player = "X"
 computer = "O"
-#x = [player,computer,player,computer,player,computer,player,computer,player]
-x = [computer,player,computer,player,computer,player,computer,player,computer]
 
 '''
 The below code will display the output in most conventional TUI form.
