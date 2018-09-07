@@ -4,7 +4,9 @@ computer = "O"
 #x = [player,computer,player,computer,player,computer,player,computer,player]
 x = [computer,player,computer,player,computer,player,computer,player,computer]
 
-
+'''
+The below code will display the output in most conventional TUI form.
+'''
 num = [" "]*9
 def print_output():
     print(" ", "|", " ", "|")
@@ -23,7 +25,11 @@ def print_output():
 import random
 new_list = [0,2,6,8]
 def computer_turn():
-    #Attack code start here
+
+'''
+Attack code starts here. 
+'''
+
     if num[0]==num[1]==computer and (num[2] != "X" and num[2] != "O"):
         num[2] = x.pop(0)
         print("24")
@@ -222,11 +228,12 @@ def computer_turn():
                 else:
                     pass
 
-        
-#Attack code ends here
+# Attack code ends here
 ###################################################################
-    ##############################################################
-    #Defend code start here
+
+'''
+ Defend code starts here
+'''
     elif num[0]==num[1]==player and (num[2] != "X" and num[2] != "O"):
         num[2] = x.pop(0)
         print("1")
@@ -346,7 +353,11 @@ def computer_turn():
                 break
             else:
                 pass
-        
+'''
+The below segments will run every time to check the horizontal, vertical or diagonal matching
+after the players and computers turn.
+'''
+      
 def check():
     if num[0]==num[1]==num[2]==player:
         print(f"Player won the match")
@@ -421,18 +432,48 @@ def player_turn():
     num[input_value-1] = x.pop(0)
     print_output()
     
-    
-from IPython.display import clear_output
-while True:
-    if len(x) != 0:
-        clear_output()
-        computer_turn()
-        print_output()
+  
+def computer_first():
+    from IPython.display import clear_output
+    while True:
         if len(x) != 0:
-            player_turn()
             clear_output()
+            computer_turn()
             print_output()
+            if len(x) != 0:
+                player_turn()
+                clear_output()
+                print_output()
+            else:
+                break
         else:
             break
-    else:
-        break
+
+
+def player_first():
+    from IPython,display import clear_output
+    while True:
+        if len(x) != 0:
+            clear_output()
+            player_turn()
+            print_output()
+            if len(x) != 0:
+                computer_turn()
+                clear_output()
+                print_output()
+            else:
+                break
+        else:
+            break
+
+
+users_value = input("Do you want to toss a coin")
+
+if users_value.lower() == "yes":
+    user_toss = input("Enter 1 or 2")
+    toss_list = [1,2]
+    toss = random.choice(toss_list)
+    if toss == user_toss:
+        computer_first()
+    elif toss != user_toss:
+        player_first()
