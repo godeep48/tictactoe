@@ -179,14 +179,12 @@ Attack code starts here.
         num[rand_num] = x.pop(0)
         print("44")
         
-        
     elif len(x)==5:
         if num[0] == num[2]:
             for b in (6,8):
                 if num[b]!="X" and num[b]!="O":
                     num[b] = x.pop(0)
                     print("55")
-                    
                     break
                 else:
                     pass
@@ -432,7 +430,6 @@ def player_turn():
     num[input_value-1] = x.pop(0)
     print_output()
     
-  
 def computer_first():
     from IPython.display import clear_output
     while True:
@@ -448,7 +445,6 @@ def computer_first():
                 break
         else:
             break
-
 
 def player_first():
     from IPython,display import clear_output
