@@ -346,8 +346,75 @@ def computer_turn():
                 break
             else:
                 pass
-            
-            
+        
+def check():
+    if num[0]==num[1]==num[2]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[3]==num[4]==num[5]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[6]==num[7]==num[8]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[0]==num[3]==num[6]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[1]==num[4]==num[7]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[2]==num[5]==num[8]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[0]==num[4]==num[8]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[2]==num[4]==num[6]==player:
+        print(f"Player won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[0]==num[1]==num[2]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[3]==num[4]==num[5]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[6]==num[7]==num[8]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[0]==num[3]==num[6]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[1]==num[4]==num[7]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[2]==num[5]==num[8]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[0]==num[4]==num[8]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    elif num[2]==num[4]==num[6]==computer:
+        print(f"Computer won the match")
+        while len(x)!=0:
+            x.pop()
+    else:
+        pass
+
 def player_turn():
     input_value = int(input("Enter the field"))
     clear_output()
