@@ -444,7 +444,7 @@ def computer_first():
             break
 
 def player_first():
-    from IPython,display import clear_output
+    from IPython.display import clear_output
     while True:
         if len(x) != 0:
             clear_output()
