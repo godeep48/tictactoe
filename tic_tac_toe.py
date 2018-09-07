@@ -465,6 +465,13 @@ def player_first():
             break
 
 
+class Ask():
+    def __init__(self):
+        pass:
+    def ask_again(self):
+        play_again = input("Do you want to play again? Yes/No")
+ask = Ask()
+
 users_value = input("Do you want to toss a coin")
 
 if users_value.lower() == "yes":
@@ -488,3 +495,5 @@ elif users_value.lower() == "no":
         print("Computer will make the first turn")
         x = [computer,player,computer,player,computer,player,computer,player,computer]
         computer_first()
+
+ask.ask_again()
