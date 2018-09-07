@@ -466,9 +466,7 @@ def player_first():
         else:
             break
 
-
 users_value = input("Do you want to toss a coin")
-
 if users_value.lower() == "yes":
     user_toss = input("Enter 1 or 2")
     toss_list = [1,2]
