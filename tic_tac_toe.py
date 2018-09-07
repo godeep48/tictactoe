@@ -1,9 +1,6 @@
 import random
 player = "X"
 computer = "O"
-#x = [player,computer,player,computer,player,computer,player,computer,player]
-x = [computer,player,computer,player,computer,player,computer,player,computer]
-
 '''
 The below code will display the output in most conventional TUI form.
 '''
@@ -468,6 +465,8 @@ if users_value.lower() == "yes":
     toss_list = [1,2]
     toss = random.choice(toss_list)
     if toss == user_toss:
+        x = [computer,player,computer,player,computer,player,computer,player,computer]
         computer_first()
     elif toss != user_toss:
+        x = [player,computer,player,computer,player,computer,player,computer,player]
         player_first()
