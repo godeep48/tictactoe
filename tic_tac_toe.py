@@ -1,6 +1,10 @@
 import random
+from IPython.display import clear_output
 player = "X"
 computer = "O"
+#x = [player,computer,player,computer,player,computer,player,computer,player]
+x = [computer,player,computer,player,computer,player,computer,player,computer]
+
 '''
 The below code will display the output in most conventional TUI form.
 '''
@@ -21,11 +25,12 @@ def print_output():
     
 import random
 new_list = [0,2,6,8]
-def computer_turn():
 
 '''
 Attack code starts here. 
 '''
+def computer_turn():
+
 
     if num[0]==num[1]==computer and (num[2] != "X" and num[2] != "O"):
         num[2] = x.pop(0)
@@ -176,12 +181,14 @@ Attack code starts here.
         num[rand_num] = x.pop(0)
         print("44")
         
+        
     elif len(x)==5:
         if num[0] == num[2]:
             for b in (6,8):
                 if num[b]!="X" and num[b]!="O":
                     num[b] = x.pop(0)
                     print("55")
+                    
                     break
                 else:
                     pass
@@ -226,9 +233,7 @@ Attack code starts here.
 # Attack code ends here
 ###################################################################
 
-'''
- Defend code starts here
-'''
+
     elif num[0]==num[1]==player and (num[2] != "X" and num[2] != "O"):
         num[2] = x.pop(0)
         print("1")
@@ -427,6 +432,7 @@ def player_turn():
     num[input_value-1] = x.pop(0)
     print_output()
     
+  
 def computer_first():
     from IPython.display import clear_output
     while True:
@@ -442,6 +448,7 @@ def computer_first():
                 break
         else:
             break
+
 
 def player_first():
     from IPython.display import clear_output
@@ -459,14 +466,27 @@ def player_first():
         else:
             break
 
+
 users_value = input("Do you want to toss a coin")
+
 if users_value.lower() == "yes":
     user_toss = input("Enter 1 or 2")
     toss_list = [1,2]
     toss = random.choice(toss_list)
-    if toss == user_toss:
+    if toss != user_toss:
+        print("You lose the toss. Computer will make the first turn")
         x = [computer,player,computer,player,computer,player,computer,player,computer]
         computer_first()
-    elif toss != user_toss:
+    elif toss == user_toss:
+        print("You won the toss. Make your first turn")
         x = [player,computer,player,computer,player,computer,player,computer,player]
         player_first()
+elif users_value.lower() == "no":
+    user_opinion = input("Do you want to play first. Yes/No")
+    if user_opinion.lower()=="yes":
+        x = [player,computer,player,computer,player,computer,player,computer,player]
+        player_first()
+    elif user_opinion.lower()=="no":
+        print("Computer will make the first turn")
+        x = [computer,player,computer,player,computer,player,computer,player,computer]
+        computer_first()
